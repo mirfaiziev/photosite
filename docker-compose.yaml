@@ -24,3 +24,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: bootstrap
+
+  node:
+    build:
+      context: ./.docker/node
+    volumes:
+      - "./:/code"
