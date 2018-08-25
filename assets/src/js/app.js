@@ -1,10 +1,8 @@
-/**
- * Created by Victor on 25/08/2018.
- */
 import jQuery from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
+import '../scss/index.scss';
 
 jQuery(function() {
-  jQuery('body').css('color', 'blue');
+  console.log('ready');
 });

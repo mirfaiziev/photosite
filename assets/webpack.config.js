@@ -7,8 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = (env, argv) => ({
   entry       : [
-    './src/js/index.js',
-    // './src/scss/index.scss'
+    './src/js/app.js',
   ],
   output      : {
     path    : path.resolve(__dirname, '..', 'public/assets'),
@@ -27,50 +26,70 @@ module.exports = (env, argv) => ({
           }
         }
       },
-      /*{
-        test   : /\.scss$/,
-        include: path.resolve(__dirname, 'src/scss'),
-        use    : [{
-          loader : argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+      {
+        test: /\.scss$/,
+        loader: 'style-loader!css-loader!sass-loader'
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
           options: {
-            sourceMap: argv.mode === 'development'
-          }
-        }, {
-          loader : 'css-loader',
-          options: {
-            sourceMap    : argv.mode === 'development',
-            importLoaders: 1,
-            url          : false
-          }
-        }, {
-          loader : 'postcss-loader',
-          options: {
-            sourceMap: argv.mode === 'development',
-            plugins  : [
-              autoprefixer()
-            ]
-          }
-        }, {
-          loader : 'sass-loader',
-          options: {
-            sourceMap   : argv.mode === 'development',
-            includePaths: []
+            name: '[name].[ext]',
+            outputPath: 'fonts',
+            publicPath: 'assets/fonts'
           }
         }]
-      }*/
+      }
+/*
+      {
+        test: /\.(scss)$/,
+        include: path.resolve(__dirname, 'src/scss'),
+        use    : [
+          {
+            loader : argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+            options: {
+              sourceMap: argv.mode === 'development'
+            }
+          }, {
+            loader : 'css-loader',
+            options: {
+              sourceMap    : argv.mode === 'development',
+              importLoaders: 1,
+              url          : false
+            }
+          }, {
+            loader : 'postcss-loader',
+            options: {
+              sourceMap: argv.mode === 'development',
+              plugins  : [
+                autoprefixer()
+              ]
+            }
+          }, {
+            loader : 'sass-loader',
+            options: {
+              sourceMap   : argv.mode === 'development',
+              includePaths: []
+            }
+          }
+        ]
+      },
+*/
     ]
   },
+
   plugins     : [
-    /*new MiniCssExtractPlugin({
+    new MiniCssExtractPlugin({
       filename     : argv.mode === 'development' ? '[name].css' : '[name].[hash].css',
       chunkFilename: argv.mode === 'development' ? '[id].css' : '[id].[hash].css'
-    }),*/
+    }),
     // new webpack.HotModuleReplacementPlugin()
   ],
-/*  optimization: {
-    splitChunks: {
+  optimization: {
+    /*splitChunks: {
       chunks: 'all'
-    },
+    },*/
     minimizer  : argv.mode === 'development' ? [] : ([
         new UglifyJsPlugin({
           cache        : true,
@@ -90,7 +109,7 @@ module.exports = (env, argv) => ({
           }
         })
       ])
-  },*/
+  },
   /*devServer: {
    contentBase: path.resolve(__dirname, '..', '..', 'public', 'compressed'),
    disableHostCheck: true,
