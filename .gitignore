@@ -5,3 +5,17 @@ public/tmp.html
 public/_tmp/*
 assets/node_modules
 public/assets/*
+deployment
+/.env
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###

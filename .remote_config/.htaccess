@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+
+SetEnv APP_ENV prod
+SetEnv APP_SECRET 4ce6a28275513f4765a86760a5584483
+SetEnv SYMFONY_ENV prod
+
+php_flag  log_errors on
+php_value error_log  /storage/ssd5/223/6916223/PHP_errors.log
+
+AuthType Basic
+AuthName "Password Protected Area"
+AuthUserFile 	/storage/ssd5/223/6916223/public_html/.htpasswd
+Require valid-user
