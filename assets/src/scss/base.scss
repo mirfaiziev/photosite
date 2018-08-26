@@ -1,5 +1,7 @@
 body {
   background-color: white;
+  font-style: normal;
+  font-family: 'Poppins', sans-serif;
 }
 @include media-breakpoint-down(sm) {
   body {
@@ -10,13 +12,15 @@ body {
   margin:  15px;
 }
 
-@mixin common-text {
-  font-style: normal;
-  font-family: 'Poppins', sans-serif;
+.main-content {
+  margin-top: 25px;
+}
+
+.header-links {
+  margin-right: 10px;
 }
 
 @mixin menu-text {
-  @include common-text;
   font-weight: 700;
   color: #313131;
 }

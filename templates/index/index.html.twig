@@ -1,16 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello word ✅</h1>
-
+<div class="row welcome-image-container" data-src="/assets/images/main/welcome.jpg">
+  <div id="comingSoon"><span class="text-highligh">{{ 'app.welcome.comming' | trans }}</span>
+    {{ 'app.welcome.sooon' | trans }}
+  </div>
 
 </div>
+  <style>
+    #comingSoon{
+      width: 100%;
+      color: #333333;
+      height: 918px;
+      margin: 0 auto;
+      overflow: hidden;
+      padding: 10px 0;
+      align-items: center;
+      justify-content: space-around;
+      display: flex;
+      float: none;
+      font-size: 90px;
+    }
+    .text-highligh {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
 {% endblock %}

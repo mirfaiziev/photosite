@@ -10,7 +10,7 @@ module.exports = (env, argv) => ({
     './src/js/app.js',
   ],
   output      : {
-    path    : path.resolve(__dirname, '..', 'public/assets'),
+    path    : path.resolve(__dirname, '..', 'public_html/assets'),
     filename: 'js/index.js'
   },
   module      : {
@@ -87,41 +87,7 @@ module.exports = (env, argv) => ({
           }
         ]
       },
-    /*  {
-        test: /\.(sa|sc|c)ss$/,
-        include: [
-          path.resolve(__dirname, 'src/scss'),
-          path.resolve(__dirname, 'src/css'),
-        ],
-        use    : [
-          {
-            loader : argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
-            options: {
-              sourceMap: argv.mode === 'development'
-            }
-          }, {
-            loader : 'css-loader',
-            options: {
-              sourceMap    : argv.mode === 'development',
-              importLoaders: 1,
-              url          : false
-            }
-          }, {
-            loader : 'postcss-loader',
-            options: {
-              sourceMap: argv.mode === 'development',
-              plugins  : [
-                autoprefixer()
-              ]
-            }
-          }, {
-            loader : 'sass-loader',
-            options: {
-              sourceMap   : argv.mode === 'development',
-              includePaths: []
-            }
-          }*/
-        ]
+    ]
   },
 
   plugins     : [
