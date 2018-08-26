@@ -2,22 +2,20 @@ body {
   background-color: white;
   font-style: normal;
   font-family: 'Poppins', sans-serif;
-}
-@include media-breakpoint-down(sm) {
-  body {
-    background-color: white;
+
+  @include media-breakpoint-down(sm) {
+    background-color: lightcyan;
+  }
+
+  @include media-breakpoint-between(sm, md) {
+    background-color: lightpink;
   }
 }
-.content {
-  margin:  15px;
-}
 
-.main-content {
-  margin-top: 25px;
-}
-
-.header-links {
-  margin-right: 10px;
+.text-highligh {
+  font-family: 'Playfair Display', serif;
+  font-style: normal;
+  color: #333333;
 }
 
 @mixin menu-text {
@@ -26,12 +24,18 @@ body {
 }
 
 header {
+  margin:  15px;
+
   .logo {
     @include menu-text ;
     line-height: 1.6;
     letter-spacing: 0px;
     text-align: center;
     font-size: 28px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 18px;
+    }
   }
 
   nav {
@@ -40,10 +44,20 @@ header {
     line-height: 18px;
     position: relative;
     display: block;
-    text-align: left;
-    //transition: .3s;
+    float: right;
+    transition: .3s;
     z-index: 1;
     padding-top: 10px;
+    @include media-breakpoint-down(sm) {
+      font-size: 14px;
+      text-align: center;
+      float: none;
+    }
   }
 }
+
+.main-content {
+  margin-top: 25px;
+}
+
 

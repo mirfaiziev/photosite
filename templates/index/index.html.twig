@@ -1,12 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="row welcome-image-container" data-src="/assets/images/main/welcome.jpg">
+  <div class="row">
+    <div class="col">
+       <div class="welcome-image-container" data-src="/assets/images/main/welcome.jpg">
+         <div class="image-cover"><span class="text-highligh">{{ 'app.welcome.comming' | trans }}</span>
+           {{ 'app.welcome.sooon' | trans }}
+         </div>
+      </div>
+    </div>
+  </div>
+{#<div class="row welcome-image-container" data-src="/assets/images/main/welcome.jpg">
   <div id="comingSoon"><span class="text-highligh">{{ 'app.welcome.comming' | trans }}</span>
     {{ 'app.welcome.sooon' | trans }}
   </div>
 
-</div>
+</div>#}
   <style>
     #comingSoon{
       width: 100%;

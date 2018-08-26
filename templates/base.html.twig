@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <meta name="HandheldFriendly" content="true">
 
@@ -12,33 +13,30 @@
 
       <title>{% block title %}{{ 'app.common.title'|trans }}{% endblock %}</title>
 
-{#todo      <meta property="og:title" content="{{ 'app.common.title'|trans }} ">
-      <meta property="og:type" content="website">
-      <meta property="og:image" content="images/content/facebook-share-image.jpg">
-      <meta property="og:description" content="{{ 'app.seo.description'|trans }} ">
+{#todo      <meta property="og:title" content="{{ 'app.common.title'|trans }} ">#}
+      {#<meta property="og:type" content="website">#}
+      {#<meta property="og:image" content="images/content/facebook-share-image.jpg">#}
+      {#<meta property="og:description" content="{{ 'app.seo.description'|trans }} ">#}
 
-      <meta property="og:url" content="todo:sitename">
+      {#<meta property="og:url" content="todo:sitename">#}
 
-      <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
-      <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
-      <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
-      <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+      {#<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">#}
+      {#<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">#}
+      {#<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">#}
+      {#<link rel="apple-touch-icon" href="/apple-touch-icon.png">#}
 
-      <link rel="canonical" href="todo:sitename">#}
+      {#<link rel="canonical" href="todo:sitename">#}
 
     </head>
     <body>
-    <body>
     <div class="container-fluid">
-      <div class="content">
         <header>
-          <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-7 logo ">{{ 'app.menu.logo' | trans }}</div>
+          <div class="row justify-content-between align-items-center">
+            <div class="col-sm-12 col-md-12 col-lg-3 "></div>
+            <div class="col-sm-12 col-md-10 col-lg-6 logo">{{ 'app.menu.logo' | trans }}</div>
 
-
-            <div class="d-flexjustify-content-end align-items-center header-links">
-              <nav class="float-right">
+            <div class="col-sm-12 col-md-2 col-lg-3 nowrap d-flexjustify-content-end header-links">
+              <nav class="header-navigation">
                 <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.portfolio' | trans }}</a>
                 <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.about-me' | trans }}</a>
                 <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.contact' | trans }}</a>
@@ -50,7 +48,7 @@
           {% block body %}
           {% endblock %}
         </div>
-      </div>
+
     </div>
 
         {% block javascripts %}
