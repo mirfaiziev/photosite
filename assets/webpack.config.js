@@ -26,10 +26,7 @@ module.exports = (env, argv) => ({
           }
         }
       },
-      {
-        test: /\.scss$/,
-        loader: 'style-loader!css-loader!sass-loader'
-      },
+
       {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
@@ -40,11 +37,62 @@ module.exports = (env, argv) => ({
             publicPath: 'assets/fonts'
           }
         }]
-      }
-/*
+      },
       {
-        test: /\.(scss)$/,
+        test: /\.css?$/,
+        include: path.resolve(__dirname, 'src/css'),
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'css',
+            publicPath: 'assets/css'
+          }
+        }]
+      },
+      // {
+      //   test: /\.(sa|sc|c)ss$/,
+      //   loader: 'style-loader!css-loader!sass-loader'
+      // },
+      {
+        test: /\.scss$/,
         include: path.resolve(__dirname, 'src/scss'),
+        use : [
+          {
+            loader : argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+            options: {
+              sourceMap: argv.mode === 'development'
+            }
+          }, {
+            loader : 'css-loader',
+            /*options: {
+              sourceMap    : argv.mode === 'development',
+              importLoaders: 1,
+              url          : false
+            }*/
+          }, {
+            loader : 'postcss-loader',
+            options: {
+              sourceMap: argv.mode === 'development',
+              plugins  : [
+                autoprefixer()
+              ]
+            }
+          }, {
+            loader : 'sass-loader',
+            options: {
+              sourceMap   : argv.mode === 'development',
+              includePaths: []
+            }
+          }
+        ]
+      },
+    /*  {
+        test: /\.(sa|sc|c)ss$/,
+        include: [
+          path.resolve(__dirname, 'src/scss'),
+          path.resolve(__dirname, 'src/css'),
+        ],
         use    : [
           {
             loader : argv.mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -72,11 +120,8 @@ module.exports = (env, argv) => ({
               sourceMap   : argv.mode === 'development',
               includePaths: []
             }
-          }
+          }*/
         ]
-      },
-*/
-    ]
   },
 
   plugins     : [

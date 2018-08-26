@@ -1,3 +1,45 @@
 body {
-  background-color: grey;
+  background-color: white;
 }
+@include media-breakpoint-down(sm) {
+  body {
+    background-color: white;
+  }
+}
+.content {
+  margin:  15px;
+}
+
+@mixin common-text {
+  font-style: normal;
+  font-family: 'Poppins', sans-serif;
+}
+
+@mixin menu-text {
+  @include common-text;
+  font-weight: 700;
+  color: #313131;
+}
+
+header {
+  .logo {
+    @include menu-text ;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  nav {
+    @include menu-text ;
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    display: block;
+    text-align: left;
+    //transition: .3s;
+    z-index: 1;
+    padding-top: 10px;
+  }
+}
+
