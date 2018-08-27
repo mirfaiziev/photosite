@@ -26,7 +26,7 @@
       {#<link rel="apple-touch-icon" href="/apple-touch-icon.png">#}
 
       {#<link rel="canonical" href="todo:sitename">#}
-      <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+
     </head>
     <body>
     <div class="container-fluid">
@@ -52,7 +52,7 @@
     </div>
 
         {% block javascripts %}
-          <script src="{{ asset('build/app.js') }}"></script>
+          <script type="text/javascript" src="{{  asset('js/index.js') }}"></script>
         {% endblock %}
     </body>
     <style>

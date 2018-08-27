@@ -18,15 +18,21 @@ services:
       - "./:/code"
     links:
       - db
+    deploy:
+      resources:
+        limits:
+          memory: 3G
+        reservations:
+          memory: 2G
 
   db:
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: bootstrap
+      MYSQL_DATABASE: sf-bootstrap
 
-  node:
+  nodejs:
     build:
-      context: ./.docker/node
+      context: ./.docker/nodejs
     volumes:
       - "./:/code"
