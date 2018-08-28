@@ -1,37 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-  <div class="row">
-    <div class="col">
-       <div class="welcome-image-container" data-src="/images/main/welcome.jpg">
-         <div class="image-cover"><span class="text-highligh">{{ 'app.welcome.comming' | trans }}</span>
-           {{ 'app.welcome.sooon' | trans }}
-         </div>
-      </div>
-    </div>
-  </div>
-{#<div class="row welcome-image-container" data-src="/assets/images/main/welcome.jpg">
-  <div id="comingSoon"><span class="text-highligh">{{ 'app.welcome.comming' | trans }}</span>
-    {{ 'app.welcome.sooon' | trans }}
-  </div>
+{#{% block styles %}
+  {{ parent()  }}
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.css"/>
+  <!-- Add the slick-theme.css if you want default styling -->
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick-theme.css"/>
 
-</div>#}
-  <style>
-    #comingSoon{
-      width: 100%;
-      color: #333333;
-      height: 918px;
-      margin: 0 auto;
-      overflow: hidden;
-      padding: 10px 0;
-      align-items: center;
-      justify-content: space-around;
-      display: flex;
-      float: none;
-      font-size: 90px;
-    }
-    .text-highligh {
-      font-family: 'Playfair Display', serif;
-    }
-  </style>
+{% endblock %}#}
+{% block body %}
+  <div class="carousel">
+    <img data-lazy="{{ asset('images/carousel/carousel-1.jpg') }}"/>
+    <img data-lazy="{{ asset('images/carousel/carousel-2.jpg') }}"/>
+    <img data-lazy="{{ asset('images/carousel/carousel-3.jpg') }}"/>
+    <img data-lazy="{{ asset('images/carousel/carousel-4.jpg') }}"/>
+    <img data-lazy="{{ asset('images/carousel/carousel-5.jpg') }}"/>
+  </div>
 {% endblock %}
+{#
+
+    {% block javascripts %}
+      {{ parent() }}
+      <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.9.0/slick/slick.min.js"></script>
+
+    {% endblock %}#}

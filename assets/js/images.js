@@ -2,12 +2,13 @@ class Images
 {
   static init($) {
     console.log('images init');
-    var $welcomeImageContainer = $('.welcome-image-container');
-    var $welcomeImageCss = 'url("'+$welcomeImageContainer.data('src')+'")';
-    $welcomeImageContainer.css(
-      'background-image',
-      $welcomeImageCss
-    );
+   $('.carousel').slick({
+     arrows: true,
+     lazyLoad: 'ondemand',
+     autoplay: true,
+     autoplaySpeed: 5000,
+     // speed: 1000,
+   });
   }
 }
 

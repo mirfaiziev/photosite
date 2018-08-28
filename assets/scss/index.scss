@@ -4,5 +4,8 @@ $fa-font-path: "~font-awesome/fonts";
 
 @import "~bootstrap/scss/bootstrap";
 
+@import "~slick-carousel/slick/slick";
+@import "~slick-carousel/slick/slick-theme";
+
 @import "base";
 @import "pages/index";

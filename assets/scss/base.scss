@@ -11,7 +11,26 @@ body {
     background-color: lightpink;
   }
 }
+/**
+ hide main content by default
+ */
+#page-main-container {
+  display: none;
+}
 
+/**
+  carousel
+ */
+.slick-prev:before {
+  color: #313131
+}
+.slick-next:before   {
+  color: #313131
+}
+
+/**
+  texts
+ */
 .text-highligh {
   font-family: 'Playfair Display', serif;
   font-style: normal;

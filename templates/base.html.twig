@@ -26,10 +26,12 @@
       {#<link rel="apple-touch-icon" href="/apple-touch-icon.png">#}
 
       {#<link rel="canonical" href="todo:sitename">#}
+      {% block styles %}
       <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+      {% endblock %}
     </head>
     <body>
-    <div class="container-fluid">
+    <div id="page-main-container" class="container-fluid">
         <header>
           <div class="row justify-content-between align-items-center">
             <div class="col-sm-12 col-md-12 col-lg-3 "></div>
@@ -48,7 +50,9 @@
           {% block body %}
           {% endblock %}
         </div>
-
+    </div>
+    <div id="page-loader">
+      <img src="{{ asset('images/service/loader.gif') }}" style="position: fixed; left: 50%; top: 50%; margin-top: -32px; margin-left: -32px">
     </div>
 
         {% block javascripts %}
