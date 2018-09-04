@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <section id="portfolio-category">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        {% for image in images %}
+          {% include 'partial/gallery-image.html.twig' with {
+            'imageName': image
+          } %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <div id="fullSizeImageModal" class="modal fade" >
+    <div class="modal-dialog my-dialog">
+      <span class="closeModal" data-dismiss="modal" >&times;</span>
+
+      <div class="modal-body">
+        <img class="fullSizeImage">
+      </div>
+    </div>
+    </div>
+
+  <style>
+    .my-dialog {
+      max-width: inherit;
+      margin: 0;
+    }
+    .fullSizeImage {
+      margin: auto;
+      display: block;
+      width: 80%;
+      max-width: 700px;
+    }
+
+    .closeModal {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      z-index: 10;
+    }
+
+    .closeModal:hover,
+    .closeModal:focus {
+      text-decoration: none;
+      cursor: pointer;
+      color: #bbb;
+    }
+
+    .modal-body {
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+    }
+  </style>
+{% endblock %}

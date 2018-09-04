@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <section id="portfolio">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+              {% include 'partial/gallery-cover.html.twig' with {
+                'slug': 'food',
+                'imageName': 'food.jpg'
+              } %}
+            </div>
+            <div class="col-sm-12 col-md-4">
+              {% include 'partial/gallery-cover.html.twig' with {
+                'slug': 'drinks',
+                'imageName': 'drinks.jpg'
+              } %}
+            </div>
+            <div class="col-sm-12 col-md-4">
+              {% include 'partial/gallery-cover.html.twig' with {
+                'slug': 'cosmetics',
+                'imageName': 'cosmetics.jpg'
+              } %}
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

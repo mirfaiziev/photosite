@@ -12,3 +12,10 @@ app:
   welcome:
     comming: 'Скоро'
     sooon: 'будет...'
+
+  portfolio:
+    gallery:
+      cover:
+        food: Еда
+        drinks: Напитки
+        cosmetics: Косметика

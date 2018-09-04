@@ -4,6 +4,8 @@
 /.env
 /public
 /public_html/build/
+/data
+!/data/.gitkeep
 /var/
 /vendor/
 ###< symfony/framework-bundle ###

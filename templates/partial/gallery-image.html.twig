@@ -1,0 +1,17 @@
+{% set webPath = images_paths_gallery_images ~ 'web/' %}
+{% set tabletPath = images_paths_gallery_images ~ 'tablet/' %}
+{% set mobilePath = images_paths_gallery_images ~ 'mobile/' %}
+{% set fullPath = images_paths_gallery_images ~ 'full/' %}
+<div class="image-container">
+  <div class="image"
+       data-toggle="modal"
+       data-target="#fullSizeImageModal"
+       data-full-image-src="{{ asset(fullPath~imageName) }}"
+  >
+    <picture>
+      <source media="(max-width: 768px)" srcset="{{ asset(tabletPath ~ imageName) }}">
+      <source media="(max-width: 576px)" srcset="{{ asset(mobilePath ~ imageName) }}">
+      <img src="{{ asset(webPath~imageName) }}">
+    </picture>
+  </div>
+</div>

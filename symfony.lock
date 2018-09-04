@@ -1,4 +1,7 @@
 {
+    "calcinai/php-imagick": {
+        "version": "v0.1.2"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {

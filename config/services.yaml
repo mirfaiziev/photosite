@@ -7,6 +7,18 @@ parameters:
     locale: 'en'
     support_locales: en|ru
 
+    images_paths.common: '/images/gallery/'
+    images_paths.gallery_covers: '/images/gallery_covers/'
+    images_paths.gallery_images: '/images/gallery_images/'
+
+    #now support only square
+    image_sizes:
+      full: 2000
+      web: 440
+      tablet: 216
+      mobile: 315
+
+
 services:
     # default configuration for services in *this* file
     _defaults:

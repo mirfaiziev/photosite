@@ -1,67 +1,70 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.getLocale() }}">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <meta name="HandheldFriendly" content="true">
+  <meta name="HandheldFriendly" content="true">
 
-       <meta name="description" content="{{ 'app.seo.description'|trans }} ">
-       <meta name="keywords" content="{{ 'app.seo.keywords'|trans }} ">
-            {#todo      <meta name="robots" content="index, follow">#}
+  <meta name="description" content="{{ 'seo.description'|trans }} ">
+  <meta name="keywords" content="{{ 'seo.keywords'|trans }} ">
+  {#todo      <meta name="robots" content="index, follow">#}
 
-      <title>{% block title %}{{ 'app.common.title'|trans }}{% endblock %}</title>
+  <title>{% block title %}{{ 'common.title'|trans }}{% endblock %}</title>
 
-{#todo      <meta property="og:title" content="{{ 'app.common.title'|trans }} ">#}
-      {#<meta property="og:type" content="website">#}
-      {#<meta property="og:image" content="images/content/facebook-share-image.jpg">#}
-      {#<meta property="og:description" content="{{ 'app.seo.description'|trans }} ">#}
+  {#todo      <meta property="og:title" content="{{ 'common.title'|trans }} ">#}
+  {#<meta property="og:type" content="website">#}
+  {#<meta property="og:image" content="images/content/facebook-share-image.jpg">#}
+  {#<meta property="og:description" content="{{ 'seo.description'|trans }} ">#}
 
-      {#<meta property="og:url" content="todo:sitename">#}
+  {#<meta property="og:url" content="todo:sitename">#}
 
-      {#<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">#}
-      {#<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">#}
-      {#<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">#}
-      {#<link rel="apple-touch-icon" href="/apple-touch-icon.png">#}
+  {#<link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">#}
+  {#<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">#}
+  {#<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">#}
+  {#<link rel="apple-touch-icon" href="/apple-touch-icon.png">#}
 
-      {#<link rel="canonical" href="todo:sitename">#}
-      {% block styles %}
-      <link rel="stylesheet" href="{{ asset('build/app.css') }}">
-      {% endblock %}
-    </head>
-    <body>
-    <div id="page-main-container" class="container-fluid">
-        <header>
-          <div class="row justify-content-between align-items-center">
-            <div class="col-sm-12 col-md-12 col-lg-3 "></div>
-            <div class="col-sm-12 col-md-10 col-lg-6 logo">{{ 'app.menu.logo' | trans }}</div>
+  {#<link rel="canonical" href="todo:sitename">#}
+  {% block styles %}
+    <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+  {% endblock %}
+</head>
+<body>
+<section>
+  <div id="page-main-container" class="container-fluid">
 
-            <div class="col-sm-12 col-md-2 col-lg-3 nowrap d-flexjustify-content-end header-links">
-              <nav class="header-navigation">
-                <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.portfolio' | trans }}</a>
-                <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.about-me' | trans }}</a>
-                <a class="p-2 text-dark" href="#">{{ 'app.menu.nav.contact' | trans }}</a>
-              </nav>
-            </div>
-          </div>
-        </header>
-        <div class="container-fluid main-content">
-          {% block body %}
-          {% endblock %}
+    <header>
+      <div class="row justify-content-between align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-3 "></div>
+        <div class="col-sm-12 col-md-10 col-lg-6 logo">{{ 'menu.logo' | trans }}</div>
+
+        <div class="col-sm-12 col-md-2 col-lg-3 nowrap d-flexjustify-content-end header-links">
+          <nav class="header-navigation">
+            <a class="p-2 text-dark" href="{{ path('portfolioIndex') }}">{{ 'menu.nav.portfolio' | trans }}</a>
+            <a class="p-2 text-dark" href="{{ path('aboutMe') }}">{{ 'menu.nav.about-me' | trans }}</a>
+            <a class="p-2 text-dark" href="{{ path('contact') }}">{{ 'menu.nav.contact' | trans }}</a>
+          </nav>
         </div>
+      </div>
+    </header>
+    <div class="container-fluid main-content">
+      {% block body %}
+      {% endblock %}
     </div>
-    <div id="page-loader">
-      <img src="{{ asset('images/service/loader.gif') }}" style="position: fixed; left: 50%; top: 50%; margin-top: -32px; margin-left: -32px">
-    </div>
+  </div>
+</section>
+<div id="page-loader">
+  <img src="{{ asset('images/service/loader.gif') }}" style="position: fixed; left: 50%; top: 50%; margin-top: -32px; margin-left: -32px">
+</div>
 
-        {% block javascripts %}
-          <script src="{{ asset('build/app.js') }}"></script>
-        {% endblock %}
-    </body>
-    <style>
-      .debug {
-        border: 1px solid red;
-      }
-    </style>
+{% block javascripts %}
+  <script src="{{ asset('build/app.js') }}"></script>
+{% endblock %}
+</body>
+<style>
+  .debug {
+    border: 1px solid red;
+  }
+</style>
 </html>

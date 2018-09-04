@@ -1,0 +1,15 @@
+{% set webPath = images_paths_gallery_covers ~ 'web/' %}
+{% set tabletPath = images_paths_gallery_covers ~ 'tablet/' %}
+{% set mobilePath = images_paths_gallery_covers ~ 'mobile/' %}
+<a href="{{ path('portfolioShow', {'slug':slug}) }}">
+<div class="image-container">
+  <div class="image">
+    <picture>
+      <source media="(max-width: 768px)" srcset="{{ asset(tabletPath ~ imageName) }}">
+      <source media="(max-width: 576px)" srcset="{{ asset(mobilePath ~ imageName) }}">
+      <img src="{{ asset(webPath~imageName) }}">
+    </picture>
+  </div>
+  <div class="image-title">{{ "portfolio.gallery.cover.#{slug}" | trans }}</div>
+</div>
+</a>

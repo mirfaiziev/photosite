@@ -1,14 +1,21 @@
-app:
-  common.title: 'Kateryna Sokhan Subject and Food Photography'
-  seo:
-    description: 'Subject photography, Food photography in Berlin open for cooperation'
-    keywords: 'Subject photography, Food photography, photographer in Berlin'
-  menu:
-    logo: 'Katheryna Sokhan Photography'
-    nav:
-      portfolio: 'Portfolio'
-      about-me: 'About me'
-      contact: 'Contact'
-  welcome:
-    comming: Comming
-    sooon: Soon...
+common.title: 'Kateryna Sokhan Subject and Food Photography'
+seo:
+  description: 'Subject photography, Food photography in Berlin open for cooperation'
+  keywords: 'Subject photography, Food photography, photographer in Berlin'
+menu:
+  logo: 'Katheryna Sokhan Photography'
+  nav:
+    portfolio: 'Portfolio'
+    about-me: 'About me'
+    contact: 'Contact'
+welcome:
+  comming: Comming
+  sooon: Soon...
+
+portfolio:
+  gallery:
+    cover:
+      food: Food
+      drinks: Drinks
+      cosmetics: Сosmetics
+#portfolio.gallery.cover.food: xxx
