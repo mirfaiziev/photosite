@@ -33,8 +33,14 @@ services:
     ports:
     - "3307:3306"
 
-  nodejs:
-    build:
-      context: ./.docker/nodejs
-    volumes:
-      - "./:/code"
+#  nodejs:
+#    build:
+#      context: ./.docker/nodejs
+#    volumes:
+#      - "./:/code"
+
+  browser:
+    hostname: browser
+    image: selenium/standalone-chrome
+    ports:
+      - "4444:4444"

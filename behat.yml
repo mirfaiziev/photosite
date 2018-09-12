@@ -1,0 +1,15 @@
+default:
+
+  extensions:
+    Behat\MinkExtension:
+      goutte:    ~
+      # Use goutte (basic PHP browser, super fast) as the default driver.
+      default_session: goutte
+      # For real browser testing and tests requiring JS use selenium2 driver.
+      # Tag features/scenarious with @javascript to use the selenium2 driver.
+      javascript_session: selenium2
+      base_url: http://web
+      browser_name: chrome
+      selenium2:
+        wd_host: "http://browser:4444/wd/hub"
+        capabilities: {"browser": "chrome", "version": "*"}
